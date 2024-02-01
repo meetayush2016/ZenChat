@@ -4,6 +4,7 @@ import SendMessage from './SendMessage '
 import { useEffect , useRef , useState } from 'react'
 import { query , collection , orderBy , onSnapshot , limit, QuerySnapshot } from 'firebase/firestore'
 import { db } from '../firebase'
+import backgroundImg from "../img/chat.jpg"; 
 
 
 const ChatBox = () => {
@@ -32,7 +33,7 @@ const ChatBox = () => {
   }, []);
 
   return (
-    <main className="chat-box">
+    <main className="chat-box" style={{backgroundImage: `url(${backgroundImg})`}}>
       <div className="messages-wrapper">
         {messages?.map((message) => (
           <Message key={message.id} message={message} />
